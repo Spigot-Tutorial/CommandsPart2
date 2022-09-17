@@ -1,0 +1,15 @@
+name: CommandsPart2
+version: '${project.version}'
+main: me.shalckercraft.commandspart2.PLugin
+api-version: 1.16
+authors: [ ShalckerCraft ]
+
+commands:
+  god:
+    description: Become invincible
+    usage: /<command>
+    aliases:
+      - kodymode
+  feed:
+    description: Feed yourself without eating.
+    usage: /<command>
