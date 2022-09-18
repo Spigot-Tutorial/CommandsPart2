@@ -6,7 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class FeedCommand implements CommandExecutor {
+public class FeedCMD implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -14,8 +14,12 @@ public class FeedCommand implements CommandExecutor {
         if (sender instanceof Player) {
 
             Player p = (Player) sender;
-            p.setFoodLevel(20);
-            p.sendMessage(ChatColor.YELLOW + "Food set to max. Bon appetit.");
+            if (p.hasPermission("commandspart2.feed")) {
+                p.setFoodLevel(20);
+                p.sendMessage(ChatColor.YELLOW + "Food set to max. Bon appetit.");
+            } else {
+                p.sendMessage(ChatColor.RED + "You do not have the require permission(commandspart2.feed) to run this command.");
+            }
 
         }
 
